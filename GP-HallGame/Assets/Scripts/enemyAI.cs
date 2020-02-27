@@ -19,4 +19,12 @@ public class enemyAI : MonoBehaviour
     {
         enemy.destination = player.transform.position;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Arrow"))
+        {
+            enemy.speed = 0;
+        }
+    }
 }
