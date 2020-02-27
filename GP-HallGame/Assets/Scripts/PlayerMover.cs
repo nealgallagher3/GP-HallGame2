@@ -11,11 +11,15 @@ public class PlayerMover : MonoBehaviour
     public float jumpHeight = 3f;
 
     public GameObject death;
+    public GameObject gameOverMenu;
+    public GameObject winMenu;
+    public GameObject pauseMenu;
+
+    public static bool isPaused = false;
 
     public int healthValue = 100;
 
     public Text lifeText;
-    public Text endText;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -28,13 +32,18 @@ public class PlayerMover : MonoBehaviour
     private void Start()
     {
         lifeText.text = "Health: " + healthValue.ToString();
-        endText.text = "";
+
     }
     void Update()
     {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -52,6 +61,18 @@ public class PlayerMover : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -71,15 +92,32 @@ public class PlayerMover : MonoBehaviour
     {
         if (healthValue <= 0)
         {
-            endText.text = "You lose! Press 'U' for restart!";
+            gameOverMenu.SetActive(true);
             death.SetActive(false);
+            speed = 0f;
 
         }
 
     }
+
     void win()
     {
-        endText.text = "You Win! Press 'U' for restart!";
+        winMenu.SetActive(true);
         death.SetActive(false);
+        speed = 0f;
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 }
