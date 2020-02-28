@@ -386,7 +386,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Controls: WASD to move, click to shoot.
+
+
+    How to Play: Shooting the ghost temporarily disables it, try to run and hide from
+    the ghost, reach the diamond at the end to win.
+
+
+    Credits:
+
+    Collin Hummel - Code
+
+    Brandon Rodriguez - Art
+
+    Neal Gallagher - Tech'
 --- !u!222 &826217053
 CanvasRenderer:
   m_ObjectHideFlags: 0
