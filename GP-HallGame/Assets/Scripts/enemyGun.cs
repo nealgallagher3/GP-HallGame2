@@ -10,7 +10,14 @@ public class enemyGun : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    public float waitPeriod = 2f;
+    IEnumerator Freeze()
+    {
+        waitPeriod = 3f;
+        yield return new WaitForSeconds(3f);
+        waitPeriod = 1.5f;
+    }
+
+    public float waitPeriod = 1.5f;
     
     void Update()
     {
@@ -24,5 +31,13 @@ public class enemyGun : MonoBehaviour
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Arrow"))
+        {
+            StartCoroutine(Freeze());
+        }
     }
 }

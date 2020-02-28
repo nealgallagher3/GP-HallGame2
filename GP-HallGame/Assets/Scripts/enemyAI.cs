@@ -7,6 +7,13 @@ public class enemyAI : MonoBehaviour
 {
     GameObject player;
     NavMeshAgent enemy;
+
+    IEnumerator Freeze()
+    {
+        enemy.speed = 0;
+        yield return new WaitForSeconds(3f);
+        enemy.speed = 5;
+    }
     
     void Start()
     {
@@ -24,7 +31,7 @@ public class enemyAI : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Arrow"))
         {
-            enemy.speed = 0;
+            StartCoroutine(Freeze());
         }
     }
 }
