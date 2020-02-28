@@ -7,6 +7,8 @@ public class enemyAI : MonoBehaviour
 {
     GameObject player;
     NavMeshAgent enemy;
+    public AudioSource damageSound;
+    public AudioClip freezerSound;
 
     IEnumerator Freeze()
     {
@@ -32,6 +34,7 @@ public class enemyAI : MonoBehaviour
         if (other.gameObject.CompareTag("Arrow"))
         {
             StartCoroutine(Freeze());
+            AudioSource.PlayClipAtPoint(freezerSound, transform.position);
         }
     }
 }

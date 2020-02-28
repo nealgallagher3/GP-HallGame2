@@ -15,6 +15,11 @@ public class PlayerMover : MonoBehaviour
     public GameObject winMenu;
     public GameObject pauseMenu;
 
+    public AudioSource musicSource;
+    public AudioClip bgMusic;
+    public AudioClip winMusic;
+    public AudioClip jumpSound;
+
     public static bool isPaused = false;
 
     public int healthValue = 100;
@@ -32,6 +37,8 @@ public class PlayerMover : MonoBehaviour
     private void Start()
     {
         lifeText.text = "Health: " + healthValue.ToString();
+        musicSource.clip = bgMusic;
+        musicSource.Play();
 
     }
     void Update()
@@ -56,6 +63,7 @@ public class PlayerMover : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -104,6 +112,8 @@ public class PlayerMover : MonoBehaviour
     void win()
     {
         winMenu.SetActive(true);
+        musicSource.clip = winMusic;
+        musicSource.Play();
         death.SetActive(false);
         speed = 0f;
         Cursor.lockState = CursorLockMode.None;
