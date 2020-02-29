@@ -364,19 +364,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites and Models/Texture/Ghost
+    - Assets/Sprites and Models/Texture/Bookshelf
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites and Models/Texture/Ghost
+  - Assets/Sprites and Models/Texture/Bookshelf
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\GP-HallGame2\GP-HallGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cc2d0000
-    m_LastClickedID: 11724
+    m_SelectedIDs: ac2e0000
+    m_LastClickedID: 11948
     m_ExpandedIDs: 00000000c02c0000103000003430000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 682f0000
       m_LastClickedID: 0
       m_ExpandedIDs: 76fbffff
       m_RenameOverlay:
@@ -590,9 +590,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 32.06795, y: 11.15285, z: -33.94468}
+    m_Target: {x: 9.917636, y: 8.491803, z: -5.889084}
     speed: 2
-    m_Value: {x: 32.06795, y: 11.15285, z: -33.94468}
+    m_Value: {x: 9.917636, y: 8.491803, z: -5.889084}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -621,13 +621,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.32387504, y: -0.055792984, z: 0.018309142, w: -0.9444562}
+    m_Target: {x: -0.15411669, y: -0.7561476, z: 0.19087136, w: -0.60695714}
     speed: 2
-    m_Value: {x: -0.32381988, y: -0.05578348, z: 0.018306024, w: -0.94429535}
+    m_Value: {x: -0.1540905, y: -0.7560191, z: 0.19083892, w: -0.60685396}
   m_Size:
-    m_Target: 35.00842
+    m_Target: 28.094616
     speed: 2
-    m_Value: 33.50088
+    m_Value: 28.094616
   m_Ortho:
     m_Target: 0
     speed: 2
